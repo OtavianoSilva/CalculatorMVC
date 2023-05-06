@@ -7,7 +7,7 @@ class View(Tk):
     MAX_BUTTONS_PER_ROW: int = 4
 
     button_captions: list = [
-        'C', '+/-', '%', '/',
+        'C', '+/-', '<', '/',
         7, 8, 9, '*',
         4, 5, 6, '-',
         1, 2, 3, '+',
