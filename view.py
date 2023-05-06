@@ -2,11 +2,11 @@ from tkinter import *
 
 class View(Tk):
 
-    PAD = 10
+    PAD: int = 10
 
-    MAX_BUTTONS_PER_ROW = 4
+    MAX_BUTTONS_PER_ROW: int = 4
 
-    button_captions = [
+    button_captions: list = [
         'C', '+/-', '%', '/',
         7, 8, 9, '*',
         4, 5, 6, '-',
@@ -57,7 +57,9 @@ class View(Tk):
                 row_controller += 1
                 column_controller = 0
 
-            button = Button(frame, text= caption, height= 2, width= 3)
+            button = Button(frame, command= lambda button = caption:
+                self.controller.on_button_click(button), text= caption, height= 2, width= 3
+                )
             button.grid(row= row_controller, column= column_controller)
 
             column_controller += 1
